@@ -1,0 +1,58 @@
+{
+	"test-network": {
+		"orderer01": {
+			"url": "grpc://orderer01.fabricplayground.svc.cluster.local:7050",
+			"server-hostname": "ordererorg1.example.com",
+			"tls_cacerts": "../../fixtures/channel/crypto-config/ordererOrganizations/ordererorg1.example.com/orderers/ordererorg1.orderer.example.com/msp/tlscacerts/tlsca.ordererorg1.example.com-cert.pem"
+		},
+
+		"orderer02": {
+			"url": "grpc://orderer02.fabricplayground.svc.cluster.local:7050",
+			"server-hostname": "ordererorg2.example.com",
+			"tls_cacerts": "../../fixtures/channel/crypto-config/ordererOrganizations/ordererorg2.example.com/orderers/ordererorg2.orderer.example.com/msp/tlscacerts/tlsca.ordererorg2.example.com-cert.pem"
+		},
+
+		"org1": {
+			"name": "peerOrg1",
+			"mspid": "Org1MSP",
+			"ca": {
+				"url": "http://ca0.fabricplayground.svc.cluster.local:7054",
+				"name": "ca-org1"
+			},
+			"peer1": {
+				"requests": "grpc://peer01.fabricplayground.svc.cluster.local:7051",
+				"events": "grpc://peer01.fabricplayground.svc.cluster.local:7053",
+				"server-hostname": "peer0.org1.example.com",
+				"tls_cacerts": "../../fixtures/channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem"
+			},
+
+			"peer2": {
+				"requests": "grpc://peer11.fabricplayground.svc.cluster.local:7051",
+				"events": "grpc://peer11.fabricplayground.svc.cluster.local:7053",
+				"server-hostname": "peer1.org1.example.com",
+				"tls_cacerts": "../../fixtures/channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/tlsca.org1.example.com-cert.pem"
+			}
+		},
+		"org2": {
+			"name": "peerOrg2",
+			"mspid": "Org2MSP",
+			"ca": {
+				"url": "http://ca1.fabricplayground.svc.cluster.local:7054",
+				"name": "ca-org2"
+			},
+			"peer1": {
+				"requests": "grpc://peer02.fabricplayground.svc.cluster.local:7051",
+				"events": "grpc://peer02.fabricplayground.svc.cluster.local:7053",
+				"server-hostname": "peer0.org2.example.com",
+				"tls_cacerts": "../../fixtures/channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem"
+			},
+
+			"peer2": {
+				"requests": "grpc://peer12.fabricplayground.svc.cluster.local:7051",
+				"events": "grpc://peer12.fabricplayground.svc.cluster.local:7053",
+				"server-hostname": "peer1.org2.example.com",
+				"tls_cacerts": "../../fixtures/channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp/tlscacerts/tlsca.org2.example.com-cert.pem"
+			}
+		}
+	}
+}
